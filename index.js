@@ -3,9 +3,12 @@ import { PORT,mangoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import { Item } from "./models/itemModel.js";
 import itemsRoute from "./routes/itemsRoute.js"
+import cors from 'cors';
 const app = express();
 
 app.use(express.json());
+
+app.use(cors());
 
 app.get('/',(request,response) => {
     console.log(request);
